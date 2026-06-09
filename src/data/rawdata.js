@@ -1075,6 +1075,36 @@ const database = [
     ],
   },
   {
+    series: "Generations",
+    author: "R. A. Salvatore",
+    books: [
+      {
+        title: "Timeless",
+        format: "paperback",
+        publication_date: "May 2019",
+        author: "R. A. Salvatore",
+        isbn_13: "9780062688606",
+        collected: false,
+      },
+      {
+        title: "Boundless",
+        format: "paperback",
+        publication_date: "Jun 2020",
+        author: "R. A. Salvatore",
+        isbn_13: "9780062688637",
+        collected: false,
+      },
+      {
+        title: "Relentless",
+        format: "paperback",
+        publication_date: "Jul 2021",
+        author: "R. A. Salvatore",
+        isbn_13: "9780063085879",
+        collected: false,
+      },
+    ],
+  },
+  {
     series: "The Harpers",
     author: "Various Authors",
     books: [
@@ -2677,6 +2707,36 @@ const database = [
         publication_date: "Dec 2011",
         author: "Rosemary Jones, Erin M. Evans, James P. Davis",
         isbn_13: "9780786958511",
+        collected: false,
+      },
+    ],
+  },
+  {
+    series: "The Way of the Drow",
+    author: "R. A. Salvatore",
+    books: [
+      {
+        title: "Starlight Enclave",
+        format: "hardcover",
+        publication_date: "Aug 2021",
+        author: "R. A. Salvatore",
+        isbn_13: "9780063029774",
+        collected: false,
+      },
+      {
+        title: "Glacier's Edge",
+        format: "hardcover",
+        publication_date: "Aug 2022",
+        author: "R. A. Salvatore",
+        isbn_13: "9780063029828",
+        collected: false,
+      },
+      {
+        title: "Lolth's Warrior",
+        format: "hardcover",
+        publication_date: "Aug 2023",
+        author: "R. A. Salvatore",
+        isbn_13: "9780063029873",
         collected: false,
       },
     ],
