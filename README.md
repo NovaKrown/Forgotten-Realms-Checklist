@@ -1,1 +1,1 @@
-A simple checklist project to ensure I do not buy duplicate books again.
+A simple checklist to ensure that I do not buy any more duplicate books :)

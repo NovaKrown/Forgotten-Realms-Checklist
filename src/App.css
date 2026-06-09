@@ -1,0 +1,172 @@
+:root {
+  --text-color: antiquewhite;
+  --button-color: #78869a;
+  --button-active-color: #38404b;
+  --background-color: #202940;
+  --book-color: #121224;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.pageSelector {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: var(--background-color);
+  position: fixed;
+  z-index: 10;
+}
+
+button {
+  width: 25%;
+  padding: 5px;
+  background-color: var(--button-color);
+  color: var(--text-color);
+}
+
+.pageSelector button {
+  cursor: pointer;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+}
+
+.pageSelector button.active {
+  background: var(--button-active-color);
+  font-weight: 600;
+}
+
+.entryContainer {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding-top: 25px;
+}
+
+.block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 7%;
+  position: relative;
+}
+
+.shelfIMG {
+  height: 15vw;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-image: url("./shelf.jpg");
+  background-size: 100% 100%;
+}
+
+.title {
+  text-decoration: underline;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  aspect-ratio: 21/34.5;
+  justify-content: space-around;
+  align-items: center;
+  color: var(--text-color);
+  height: auto;
+  margin: 10px;
+  border: 1px solid #121212;
+  background-color: var(--book-color);
+  z-index: 1;
+}
+
+@media (orientation: landscape) {
+  .book {
+    max-width: 200px;
+    width: 21%;
+  }
+}
+
+@media (orientation: portrait) {
+  .book {
+    width: 33%;
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: var(--background-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  min-width: 300px;
+  border: 1px solid var(--book-color);
+}
+
+.modalButtons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.bookcover {
+  max-width: 80%;
+}
+
+h1 {
+  display: inline;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+  font-size: 18px;
+  font-family: "Metamorphous";
+}
+
+span {
+  font-size: 10px;
+}
+
+@media (orientation: portrait) {
+  h2 {
+    font-size: 10px;
+  }
+
+  span {
+    font-size: 10px;
+  }
+}
+
+.bookDetails {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+input {
+  margin: 5px 0;
+}
