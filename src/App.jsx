@@ -1,6 +1,6 @@
 import database from "./data/rawdata";
 import { useEffect, useState } from "react";
-import Pages from "./components/Pages";
+import Pages from "./components/Pages.jsx";
 
 export default function Home() {
   const [collected, setCollected] = useState(database);

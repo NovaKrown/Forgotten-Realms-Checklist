@@ -1,4 +1,4 @@
-import Entry from "./Entry";
+import Entry from "./Entry.jsx";
 
 export default function EntryContainer({
   collected,

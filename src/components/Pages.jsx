@@ -1,5 +1,5 @@
 import { useState } from "react";
-import EntryContainer from "./EntryContainer";
+import EntryContainer from "./EntryContainer.jsx";
 
 const pages = ["need", "have", "all"];
 
