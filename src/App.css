@@ -115,22 +115,24 @@ button {
   width: 8px;
   height: 8px;
   background-color: #00ffcc; /* Bioluminescent Cyan */
+  /* background-color: var(--button-color); */
   transform: scaleY(2) rotate(45deg); /* Turns square into a diamond */
   box-shadow:
     0 0 10px #00ffcc,
-    0 0 20px rgba(0, 255, 204, 0.4); /* Dual-layer magic glow */
+    0 0 20px rgba(0, 255, 204, 0.4);
 }
 
-.shelfIMG {
+/* .shelfIMG {
   height: 15vw;
   width: 100%;
   background-image: url("./shelf.jpg");
   background-size: 100% 100%;
-}
+} */
 
 .series {
   text-decoration: underline;
-  text-shadow: 0 0 8px var(--button-color);
+  text-shadow: 0 0 8px var(--button-active-color);
+  color: #00ffcc;
   margin-left: 10px;
 }
 
