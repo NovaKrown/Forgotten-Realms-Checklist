@@ -160,6 +160,7 @@ button {
   color: var(--text-color);
   height: auto;
   /* margin: 10px; */
+  margin-bottom: 3%;
   background-color: var(--book-color);
   box-shadow: 0 0 8px var(--button-color);
   z-index: 1;
