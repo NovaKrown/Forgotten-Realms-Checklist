@@ -25,9 +25,7 @@ export default function Entry({ series, books, onCheckboxChange }) {
 
   return (
     <div className="block">
-      <div className="shelfIMG"></div>
-
-      <div className="title">
+      <div className="series">
         <h1>{series}</h1>
       </div>
 
@@ -47,11 +45,11 @@ export default function Entry({ series, books, onCheckboxChange }) {
             />
 
             <div className="bookDetails">
-              <span>{book.format}</span>
-              <span>{book.publication_date}</span>
-
               <span>{book.author}</span>
-              <span>{book.isbn_13}</span>
+              <span>{book.format}</span>
+              {/* <span>{book.publication_date}</span> */}
+
+              {/* <span>{book.isbn_13}</span> */}
             </div>
           </div>
         ))}
@@ -74,6 +72,12 @@ export default function Entry({ series, books, onCheckboxChange }) {
           </div>
         </div>
       )}
+      {/* <div className="shelfIMG"></div> */}
+      <div className="section-divider-angled">
+        <div className="drow-divider">
+          <span className="drow-jewel"></span>
+        </div>
+      </div>
     </div>
   );
 }

@@ -7,62 +7,55 @@ export default function EntryContainer({
 }) {
   return (
     <div className="entryContainer">
-      {selectedPage == "need" &&
-        Object.entries(collected)
-          .map(([key, series]) => [
-            key,
-            {
-              ...series,
-              books: series.books.filter((book) => !book.collected),
-            },
-          ])
-          .filter(([, series]) => series.books.length > 0)
-          .map(([seriesKey, { series, author, books }]) => (
+      {selectedPage === "need" &&
+        collected
+          .map((series) => ({
+            ...series,
+            books: series.books.filter((book) => !book.collected),
+          }))
+          .filter((series) => series.books.length > 0)
+          .map((seriesData) => (
             <Entry
-              key={seriesKey}
-              series={series}
-              author={author}
-              books={books}
-              onCheckboxChange={(bookIndex) =>
-                onCheckboxChange(seriesKey, bookIndex)
+              key={seriesData.series}
+              series={seriesData.series}
+              author={seriesData.author}
+              books={seriesData.books}
+              onCheckboxChange={(isbn) =>
+                onCheckboxChange(seriesData.series, isbn)
               }
             />
           ))}
-      {selectedPage == "have" &&
-        Object.entries(collected)
-          .map(([key, series]) => [
-            key,
-            {
-              ...series,
-              books: series.books.filter((book) => book.collected),
-            },
-          ])
-          .filter(([, series]) => series.books.length > 0)
-          .map(([seriesKey, { series, author, books }]) => (
+      {selectedPage === "have" &&
+        collected
+          .map((series) => ({
+            ...series,
+            books: series.books.filter((book) => book.collected),
+          }))
+          .filter((series) => series.books.length > 0)
+          .map((seriesData) => (
             <Entry
-              key={seriesKey}
-              series={series}
-              author={author}
-              books={books}
-              onCheckboxChange={(bookIndex) =>
-                onCheckboxChange(seriesKey, bookIndex)
+              key={seriesData.series}
+              series={seriesData.series}
+              author={seriesData.author}
+              books={seriesData.books}
+              onCheckboxChange={(isbn) =>
+                onCheckboxChange(seriesData.series, isbn)
               }
             />
           ))}
-      {selectedPage == "all" &&
-        Object.entries(collected).map(
-          ([seriesKey, { series, author, books }]) => (
-            <Entry
-              key={seriesKey}
-              series={series}
-              author={author}
-              books={books}
-              onCheckboxChange={(bookIndex) =>
-                onCheckboxChange(seriesKey, bookIndex)
-              }
-            />
-          ),
-        )}
+
+      {selectedPage === "all" &&
+        collected.map((seriesData) => (
+          <Entry
+            key={seriesData.series}
+            series={seriesData.series}
+            author={seriesData.author}
+            books={seriesData.books}
+            onCheckboxChange={(isbn) =>
+              onCheckboxChange(seriesData.series, isbn)
+            }
+          />
+        ))}
     </div>
   );
 }

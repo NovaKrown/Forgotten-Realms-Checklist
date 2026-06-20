@@ -1,11 +1,12 @@
 :root {
-  --text-color: antiquewhite;
-  --button-color: #78869a;
-  --button-active-color: #38404b;
-  --background-color: #202940;
-  --book-color: #121224;
+  --text-color: #d1c4e9;
+  --button-color: #8b7ba1;
+  --button-active-color: #00ffcc;
+  --background-color: #0a090d;
+  --book-color: #1c1a24;
 }
 
+html,
 body {
   background-color: var(--background-color);
 }
@@ -30,6 +31,7 @@ button {
   padding: 5px;
   background-color: var(--button-color);
   color: var(--text-color);
+  font-weight: 600;
 }
 
 .pageSelector button {
@@ -39,8 +41,11 @@ button {
 }
 
 .pageSelector button.active {
-  background: var(--button-active-color);
+  background-color: var(--button-color);
+  color: #00ffcc;
+  text-shadow: 0 0 8px rgba(0, 255, 204, 0.6);
   font-weight: 600;
+  border-bottom: 2px solid #00ffcc;
 }
 
 .entryContainer {
@@ -48,48 +53,102 @@ button {
   flex-wrap: wrap;
   background-color: var(--background-color);
   color: var(--text-color);
-  padding-top: 25px;
+  padding-top: 35px;
 }
 
 .block {
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 10px 10px 7%;
+  padding: 20px 0px;
   position: relative;
+}
+
+.section-divider-angled {
+  position: relative;
+  /* Top-to-bottom gradient blend */
+  background: linear-gradient(to bottom, #0a090d 0%, #1c1a24 100%);
+  padding-top: 30px;
+  padding-bottom: 10px;
+  /* Cuts the bottom edge into a sharp angle */
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
+}
+
+.drow-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 50px 0;
+}
+
+/* Combined Silk Strand & Faerzress Gradient */
+.drow-divider::before,
+.drow-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+}
+
+/* Left line fades in from transparent black to purple */
+.drow-divider::before {
+  background: linear-gradient(
+    to right,
+    rgba(139, 123, 161, 0),
+    rgba(139, 123, 161, 0.6)
+  );
+  margin-right: 20px;
+}
+
+/* Right line fades out from purple to transparent black */
+.drow-divider::after {
+  background: linear-gradient(
+    to left,
+    rgba(139, 123, 161, 0),
+    rgba(139, 123, 161, 0.6)
+  );
+  margin-left: 20px;
+}
+
+/* The Glowing Central Cyan Jewel */
+.drow-jewel {
+  width: 8px;
+  height: 8px;
+  background-color: #00ffcc; /* Bioluminescent Cyan */
+  transform: scaleY(2) rotate(45deg); /* Turns square into a diamond */
+  box-shadow:
+    0 0 10px #00ffcc,
+    0 0 20px rgba(0, 255, 204, 0.4); /* Dual-layer magic glow */
 }
 
 .shelfIMG {
   height: 15vw;
   width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   background-image: url("./shelf.jpg");
   background-size: 100% 100%;
 }
 
-.title {
+.series {
   text-decoration: underline;
+  text-shadow: 0 0 8px var(--button-color);
+  margin-left: 10px;
 }
 
 .cardContainer {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
 }
 
 .book {
   display: flex;
   flex-direction: column;
-  aspect-ratio: 21/34.5;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   color: var(--text-color);
   height: auto;
   margin: 10px;
-  border: 1px solid #121212;
   background-color: var(--book-color);
+  box-shadow: 0 0 8px var(--button-color);
   z-index: 1;
 }
 
@@ -104,6 +163,20 @@ button {
   .book {
     width: 33%;
   }
+}
+
+.bookcover {
+  aspect-ratio: 21/34.5;
+  width: 100%;
+  background-color: black;
+}
+
+.bookDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  padding-bottom: 5px;
 }
 
 .modalOverlay {
@@ -131,10 +204,6 @@ button {
   margin-top: 1rem;
 }
 
-.bookcover {
-  max-width: 80%;
-}
-
 h1 {
   display: inline;
   font-size: 24px;
@@ -159,12 +228,6 @@ span {
   span {
     font-size: 10px;
   }
-}
-
-.bookDetails {
-  display: flex;
-  flex-direction: column;
-  width: 90%;
 }
 
 input {
