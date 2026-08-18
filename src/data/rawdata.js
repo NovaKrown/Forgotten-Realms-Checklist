@@ -904,7 +904,7 @@ const database = [
         publication_date: "Aug 1990",
         author: "Troy Denning",
         isbn_13: "9780880389198",
-        collected: false,
+        collected: true,
       },
       {
         title: "Crusade",
@@ -912,7 +912,7 @@ const database = [
         publication_date: "Jan 1991",
         author: "James Lowder",
         isbn_13: "9780880389082",
-        collected: false,
+        collected: true,
       },
     ],
   },
@@ -3103,7 +3103,7 @@ const database = [
         publication_date: "Mar 2000",
         author: "Philip Athans",
         isbn_13: "9780786915682",
-        collected: false,
+        collected: true,
       },
       {
         title: "The Halls of Stormweather",
